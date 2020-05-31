@@ -1,0 +1,101 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: This is a simple cloud formation template to create a Instance
+Parameters:
+  SGName:
+    Default: ''
+    Description: Provide Security Group Name
+    Type: String
+  subnetname:
+    Default: ''
+    Description: Provide subnet Name
+    Type: String
+  vpcname:
+    Default: ''
+    Description: Provide VPC Name
+    Type: String
+  subnetaz:
+    Default: ''
+    Type: String
+
+Resources:
+    DevVPC:
+      Type: 'AWS::EC2::VPC'
+      Properties:
+        CidrBlock: 10.0.0.0/16
+        Tags:                                     
+          - Key: Name
+            Value: !Ref vpcname 
+    PubSubnet1:
+      Type: 'AWS::EC2::Subnet'
+      Properties:
+        VpcId: !Ref DevVPC
+        AvailabilityZone: !Ref subnetaz
+        CidrBlock: 10.0.1.0/24
+        Tags:                                     
+          - Key: Name
+            Value: !Ref subnetname  
+
+    WebSG:
+      Type: 'AWS::EC2::SecurityGroup'
+      Properties:
+        GroupDescription: Allow HTTP access
+        SecurityGroupIngress:
+          - IpProtocol: tcp
+            FromPort: 80
+            ToPort: 80
+            CidrIp: 0.0.0.0/0
+        VpcId: !Ref DevVPC
+        Tags:
+          - Key: Name
+            Value: !Ref SGName
+
+    prodIGS:
+      Type: AWS::EC2::InternetGateway
+      Properties:
+        Tags:
+          - Key: Name
+            Value: ProdIGW
+
+    IGWattachToVPC:
+      Type: AWS::EC2::VPCGatewayAttachment
+      Properties: 
+        InternetGatewayId: !Ref prodIGS
+        VpcId: !Ref DevVPC
+
+    ProdPubRT:
+      Type: AWS::EC2::RouteTable
+      Properties: 
+        Tags:
+          - Key: Name
+            Value: ProdRT
+        VpcId: !Ref DevVPC
+
+
+    PubRTRoute:
+      Type: AWS::EC2::Route
+      Properties: 
+        RouteTableId: !Ref ProdPubRT
+        DestinationCidrBlock: 0.0.0.0/0
+        GatewayId: !Ref prodIGS
+ 
+    RouteTableAsso:
+      Type: AWS::EC2::SubnetRouteTableAssociation
+      Properties: 
+        RouteTableId: !Ref ProdPubRT
+        SubnetId: !Ref PubSubnet1
+
+
+
+
+Outputs:
+  VpcId:
+    Description: this is vpc id
+    Value: !Ref DevVPC
+  SubnetId:
+    Description: this is subnetid
+    Value: !Ref PubSubnet1
+  SGName:
+    Value: !Ref WebSG
+
+
+

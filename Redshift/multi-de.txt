@@ -1,0 +1,10 @@
+1|JSG99FHE|Rafael|Taylor|Kent|WA|Etiam.laoreet.libero@sodalesMaurisblandit.edu|(664) 602-4412|TRUE|TRUE||FALSE|TRUE|||TRUE|FALSE|TRUE
+2|PGL08LJI|Vladimir|Humphrey|Murfreesboro|SK|Suspendisse.tristique|@nonnisiAenean.edu|(783) 492-1886||||TRUE|TRUE|||TRUE|FALSE|TRUE
+3|IFT66TXU|Lars|Ratliff|High Point|ME|amet.faucibus.ut@condimentumegetvolutpat.ca|(624) 767-2465|TRUE|FALSE||FALSE||FALSE|TRUE|||TRUE
+4|XDZ38RDD|Barry|Roy|Omaha|AB|sed@lacusUtnec.ca|(355) 452-8168|FALSE|TRUE||FALSE||||||FALSE
+5|AEB55QTM|Reagan|Hodge|Forest Lake|NS|Cum@accumsan.com|(476) 519-9131|||TRUE|FALSE|||TRUE|TRUE|FALSE|TRUE
+6|NDQ15VBM|Victor|Hernandez|Naperville|GA|turpis@accumsanlaoreet.org|(818) 765-4255|FALSE|||TRUE||TRUE|TRUE|TRUE|TRUE|TRUE
+7|OWY35QYB|Tamekah|Juarez|Moultrie|WV|elementum@semperpretiumneque.ca|(297) 875-7247||||TRUE|TRUE|FALSE|||FALSE|FALSE
+8|AZG78YIP|Colton|Roy|Guayama|AK|ullamcorper.nisl@Cras.edu|(998) 934-9210|||TRUE|TRUE||TRUE|FALSE||FALSE|FALSE
+9|MSD36KVR|Mufutau|Watkins|Port Orford|MD|Integer.mollis.Integer@tristiquealiquet.org|(725) 719-7670|TRUE|FALSE||FALSE|TRUE||||FALSE|TRUE
+10|WKW41AIW|Naida|Calderon|Waterbury|MB|Donec.fringilla@sodalesat.org|(197) 726-8249|FALSE|FALSE|FALSE||FALSE|TRUE||TRUE||

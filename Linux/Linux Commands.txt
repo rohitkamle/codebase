@@ -1,0 +1,42 @@
+Linux Command
+
+
+
+#Run program using Super User / Admin
+sudo su 
+
+
+#Update yum packages
+yum update -y
+
+
+#install httpd server
+yum install httpd -y
+
+#start httpd server
+service httpd start
+
+#check httpd service status
+service httpd status
+
+#create file 
+vi <filename.ext>
+
+
+#insert containent in file
+Press i key
+
+#paste conents in file
+press i key and mouse righ click button
+
+#save file contents
+press ESC key and then :wq and then enter button
+
+
+#see file contents
+cat <filename.ext>
+
+#come out of terminal window
+exit
+
+

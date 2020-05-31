@@ -1,0 +1,18 @@
+      [
+        {
+          "ParameterKey": "SGName",
+          "ParameterValue": "NewProd-SG"
+        },
+        {
+          "ParameterKey": "subnetname",
+          "ParameterValue": "NEWPROD-SUBNET-PUB"
+        },
+        {
+          "ParameterKey": "vpcname",
+          "ParameterValue": "NEWPROD-VPC"
+        },
+        {
+          "ParameterKey": "subnetaz",
+          "ParameterValue": "us-east-1a"
+        }
+      ]

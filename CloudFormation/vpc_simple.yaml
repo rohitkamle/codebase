@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: This is a simple cloud formation template to create a Instance
+
+Resources:
+    Provpc:
+      Type: 'AWS::EC2::VPC'
+      Properties:
+        CidrBlock: 172.31.0.0/16
+        Tags:                                     
+          - Key: Name
+            Value: Prod-VPC   
+
+    PubSubnet1:
+      Type: 'AWS::EC2::Subnet'
+      Properties:
+        VpcId: !Ref Provpc
+        AvailabilityZone: us-east-1a
+        CidrBlock: 172.31.1.0/24
+        MapPublicIpOnLaunch: true
+        Tags:                                     
+          - Key: Name
+            Value: pro-public-subnet   
+
+Outputs:
+  VpcId:
+    Description: this is vpc id
+    Value: !Ref Provpc
+  SubnetId:
+    Description: this is subnetid
+    Value: !Ref PubSubnet1

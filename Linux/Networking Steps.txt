@@ -1,0 +1,31 @@
+Create Custom VPC
+Attached DHCP Option Set
+Create NACL (Default)
+Create Route Table (Dafault)
+Verify NACL Inbound and Outbound Rules
+Create Public Subnet (10.0.1.0/24)
+Create Private Subnet (10.0.2.0/24)
+Create Route Table Public
+Create Route Table Private
+Associate Public Route Table to Public Subnet
+Associate Private Route Table to Private Subnet
+Create EC2 instance in Public Subnet and Assign Public IP
+Creat EC2 instance in Private Subnet and do not assign public IP
+Create Websever Security Group and Open 22 and 80 Port for 0.0.0.0/0
+Create DBServer Security Group and Open 22 and 1433 (MS SQL) Port for 0.0.0.0/0
+Create Internet Gateway
+Attache it to Custom VPC
+Go to Route Table and click on Public Route Table
+Click on Route and click on Edit Routes
+Click on Add Route and add 0.0.0.0/0 (Destination) Target should be internet Gateway name >> Click Save Routes
+Try to login to Instance using Public IP which is in Public Subnet
+Now from Webserver Instance try to login to DBserver using SSH
+Copy PEM file to webserver
+modify permissions of PEM file using command (chmod 400 filname.pem)
+try to connect to internet from dbserver (ping www.google.com) , it should not work.
+Create NAT Gateway and Put it in Public Subnet and Assign Elastic IP to it
+Once the NAT gateway status is available go to Private Route Table >> Open Routes >> Edit Routes
+Add 0.0.0.0/0 (Destination) and Target should be Nat-gateway Name
+
+
+

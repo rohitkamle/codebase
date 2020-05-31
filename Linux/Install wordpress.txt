@@ -1,0 +1,19 @@
+#Install Wordpress
+sudo su
+yum update -y
+yum install http php php-mysql -y
+cd /var/www/html
+wget https://wordpress.org/wordpress-5.1.1.tar.gz
+tar -xzf wordpress-5.1.1.tar.gz
+cp -r wordpress/* /var/www/html
+rm -rf wordpress
+rm -f latest.tar.gz
+chmod -R 755 wp-content
+chown -R apache:apache wp-content
+chkconfig httpd on
+service httpd start
+#copy detail from wordpress website and go back to your server
+
+#in the same html directory (/var/www/html/) create a new file
+vi wp-config.php
+# copy the contents to this file.
