@@ -1,5 +1,4 @@
-
-#Run program using Super User / Admin
+Run program using Super User / Admin
 sudo su 
 #Update yum packages
 yum update -y
@@ -8,7 +7,8 @@ yum install httpd -y
 # keep it running after restart
 chkconfig httpd on
 #start httpd server
-service httpd start
+service
+ httpd start
 #check httpd service status
 service httpd status
 #make ec2-user as owner of /var/www/html
