@@ -1,0 +1,12 @@
+_id string,
+index int,
+guid string,
+isActive boolean,
+balance string,
+age int,
+eyecolor string,
+name string,
+gender string,
+company string,
+email string,
+phone string

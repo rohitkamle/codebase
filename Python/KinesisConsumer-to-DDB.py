@@ -2,7 +2,7 @@ import boto3
 import json
 from datetime import datetime
 import time
-my_stream_name = 'first-stream'
+my_stream_name = 'stream-1'
 kinesis_client = boto3.client('kinesis', region_name='ap-south-1')
 response = kinesis_client.describe_stream(StreamName=my_stream_name)
 my_shard_id = response['StreamDescription']['Shards'][0]['ShardId']
@@ -15,7 +15,7 @@ record_response = kinesis_client.get_records(ShardIterator=my_shard_iterator,
                                               Limit=2)
 
 dynamodb = boto3.resource('dynamodb', region_name='ap-south-1')
-table = dynamodb.Table('demo2')
+table = dynamodb.Table('kinesisdata')
 
 
 while 'NextShardIterator' in record_response:

@@ -2,7 +2,7 @@ import boto3
 import json
 from datetime import datetime
 import time
-my_stream_name = 'stream1'
+my_stream_name = 'stream-1'
 kinesis_client = boto3.client('kinesis', region_name='ap-south-1')
 response = kinesis_client.describe_stream(StreamName=my_stream_name)
 my_shard_id = response['StreamDescription']['Shards'][0]['ShardId']

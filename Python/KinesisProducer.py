@@ -5,7 +5,7 @@ import calendar
 import random
 import time
 
-my_stream_name = 'first-stream'
+my_stream_name = 'stream-1'
 
 kinesis_client = boto3.client('kinesis', region_name='ap-south-1')
 
